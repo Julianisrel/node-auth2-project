@@ -1,5 +1,6 @@
 const express = require("express")
 const helmet = require("helmet")
+const cookieParser = require('cookie-parser');
 const cors = require("cors")
 const session = require("express-session")
 const usersRouter = require("./users/users-router")
@@ -12,9 +13,11 @@ const port = process.env.PORT || 8080
 
 
 
-server.use(helmet())
-server.use(cors())
-server.use(express.json())
+erver.use(express.json());
+server.use(helmet());
+server.use(cors());
+server.use(cookieParser());
+
 
 
 
